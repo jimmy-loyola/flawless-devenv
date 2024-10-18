@@ -1,0 +1,59 @@
+#!/bin/bash
+
+alias ff='fn-find-neovim'
+fn-find-neovim() {
+  find . | fzf -e -m \
+    --bind 'enter:execute(nvim {+})' \
+    --bind "ctrl-y:execute-silent(echo $(pwd)/{+} | xclip -se c)"
+}
+
+alias gg='fn-grep-neovim'
+fn-grep-neovim() {
+  search_string="$*"
+  grep -liR "$search_string" 2> /dev/null | fzf -e -m \
+    --bind "enter:execute(nvim -c \"/\c$search_string\" {+})" \
+    --bind "ctrl-y:execute-silent(echo $(pwd)/{+} | xclip -se c)" \
+    --preview="grep -n -i -C 5 \"$search_string\" {} --color=always" \
+    --preview-window="up:70%" --keep-right
+}
+
+alias glf='fn-git_log_file'
+fn-git_log_file() {
+  file_or_dir=`pwd`/$1
+  if [ -f $file_or_dir ]; then
+    cd `dirname $file_or_dir`
+    git log --follow -p `basename $file_or_dir`
+    cd -
+  elif [ -d $file_or_dir ]; then
+    cd $file_or_dir
+    git log --follow -p .
+    cd -
+  fi
+}
+
+alias glfr='fn-git_log_filer'
+fn-git_log_filer() {
+  file_or_dir=`pwd`/$1
+  if [ -f $file_or_dir ]; then
+    cd `dirname $file_or_dir`
+    git log --reverse --follow -p `basename $file_or_dir`
+    cd -
+  elif [ -d $file_or_dir ]; then
+    cd $file_or_dir
+    git log --reverse --follow -p .
+    cd -
+  fi
+}
+
+alias gid='git_diff_all_changes'
+git_diff_all_changes() {
+  echo -e "\n${BRed}##########${Nc} ${BYellow}DIFF UNSTAGED${Nc} ${BRed}##########${Nc}\n"
+  git diff
+  echo -e "\n${BGreen}##########${Nc} ${BYellow}DIFF STAGED${Nc} ${BGreen}##########${NC}\n"
+  git diff --staged
+}
+
+fn-convert_pdf_to_html() {
+  find . -type f -name "*.pdf" -exec pdf2html {} {}.html \;
+}
+
