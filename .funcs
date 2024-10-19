@@ -62,3 +62,7 @@ fn-tmux-init() {
     tmux new-session -s front \; new-session -s back \; switch -t front
   fi
 }
+
+fn-docker-create-container() {
+  docker run -d -i --name "$*" ubuntu
+}
