@@ -64,5 +64,5 @@ fn-tmux-init() {
 }
 
 fn-docker-create-container() {
-  docker run -d -i --name "$*" ubuntu
+  docker run -d -i -h "$*" --name "$*" ubuntu
 }

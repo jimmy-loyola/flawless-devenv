@@ -130,17 +130,17 @@ install_kitty() {
 # Run install
 install_fzf
 install_ripgrep
-install_navi
+#install_navi
 install_zoxide
-install_pdftohtml
+#install_pdftohtml
 install_neovim
-install_tmux
+#install_tmux
 install_trans
 install_tgpt
 install_delta
-install_lazydocker
-install_lazygit
-install_kitty
+#install_lazydocker
+#install_lazygit
+#install_kitty
 
 # Prevent the script from running unintentionally
 chmod -x ~/.install.sh
