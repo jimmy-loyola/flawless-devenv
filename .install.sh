@@ -5,7 +5,7 @@ apt-get update && apt-get install -y build-essential wget nnn cmake clangd zip t
 bin_folder=~/.local/bin
 app_folder=~/.apps
 rm -rf $app_folder && mkdir $app_folder
-rm -rf $bin_folder && mkdir $bin_folder
+rm -rf $bin_folder && mkdir -p $bin_folder
 
 # Install Fuzzy Finder
 install_fzf() {
