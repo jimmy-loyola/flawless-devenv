@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get update && apt-get install -y build-essential wget nnn cmake clangd zip tldr libevent-dev bison ncurses-dev
+apt-get update && apt-get install -y build-essential wget curl nnn cmake clangd zip tldr libevent-dev bison ncurses-dev
 
 bin_folder=~/.local/bin
 app_folder=~/.apps
