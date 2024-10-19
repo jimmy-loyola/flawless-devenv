@@ -57,3 +57,8 @@ fn-convert_pdf_to_html() {
   find . -type f -name "*.pdf" -exec pdf2html {} {}.html \;
 }
 
+fn-tmux-init() {
+  if [ $(ls /tmp/tmux-* 2> /dev/null | wc -l) == 0 ]; then
+    tmux new-session -s front \; new-session -s back \; switch -t front
+  fi
+}
