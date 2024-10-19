@@ -1,8 +1,7 @@
 #!/bin/bash
 
-apt-get update && apt-get install -y build-essential nnn cmake clangd zip tldr libevent-dev bison ncurses-dev
+apt-get update && apt-get install -y build-essential wget nnn cmake clangd zip tldr libevent-dev bison ncurses-dev
 
-source ~/.bashrc
 bin_folder=~/.local/bin
 app_folder=~/.apps
 rm -rf $app_folder && mkdir $app_folder
@@ -144,5 +143,5 @@ install_lazygit
 install_kitty
 
 # Prevent the script from running unintentionally
-chmod -x ~/install.sh
+chmod -x ~/.install.sh
 
