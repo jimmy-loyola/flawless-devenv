@@ -1,6 +1,6 @@
 source $HOME/.alias
 source $HOME/.funcs
 source $HOME/.colors
-PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[38;5;208m\]\u\[\e[38;5;245m\]@\[\e[38;5;208m\]\H\[\e[0m\] \[\e[38;5;39m\]\w\[\e[0m\] \[\e[92m\]${PS1_CMD1}\n\[\e[0m\]'
+PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\u@\H \[\e[38;5;39m\]\w\[\e[0m\] \[\e[92m\]${PS1_CMD1}\n\[\e[0m\]'
 PATH="$HOME/.local/bin:$PATH"
 eval "$($HOME/.local/bin/zoxide init bash)"
