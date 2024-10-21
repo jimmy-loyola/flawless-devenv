@@ -2,7 +2,8 @@
 
 alias ff='fn-find-neovim'
 fn-find-neovim() {
-  find . | fzf -e -m \
+  if [ "$*" == "" ]; then p="."; else p="$*"; fi
+  find "$p" | fzf -e -m \
     --bind 'enter:execute(nvim {+})' \
     --bind "ctrl-y:execute-silent(echo $(pwd)/{+} | xclip -se c)"
 }
@@ -17,7 +18,7 @@ fn-grep-neovim() {
     --preview-window="up:70%" --keep-right
 }
 
-alias glf='fn-git_log_file'
+alias gitlf='fn-git_log_file'
 fn-git_log_file() {
   file_or_dir=`pwd`/$1
   if [ -f $file_or_dir ]; then
@@ -31,7 +32,7 @@ fn-git_log_file() {
   fi
 }
 
-alias glfr='fn-git_log_filer'
+alias gitlfr='fn-git_log_filer'
 fn-git_log_filer() {
   file_or_dir=`pwd`/$1
   if [ -f $file_or_dir ]; then
@@ -45,7 +46,7 @@ fn-git_log_filer() {
   fi
 }
 
-alias gid='git_diff_all_changes'
+alias gitd='git_diff_all_changes'
 git_diff_all_changes() {
   echo -e "\n${BRed}##########${Nc} ${BYellow}DIFF UNSTAGED${Nc} ${BRed}##########${Nc}\n"
   git diff
