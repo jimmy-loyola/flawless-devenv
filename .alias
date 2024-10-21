@@ -4,6 +4,7 @@ alias ll='ls -lah'
 alias cd='z'
 alias asdf='source ~/.bashrc'
 alias nvim="nvim -c 'highlight Visual guibg=#FF5F87 guifg=#000000'"
+alias v='nvim'
 alias delta='delta -s --navigate'
 
 # Git alias
