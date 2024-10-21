@@ -2,7 +2,7 @@
 cd ~
 
 # Install binaries
-curl -s https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.install.sh
+curl -s https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.install.sh | bash
 
 # Get support files
 wget https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.alias -O ~/.alias
