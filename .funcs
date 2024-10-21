@@ -1,17 +1,19 @@
 #!/bin/bash
 
+# Exclude directories from find and grep command
+EXCLUDE_DIR=".git"
+
 alias ff='fn-find-neovim'
 fn-find-neovim() {
-  if [ "$*" == "" ]; then p="."; else p="$*"; fi
-  find "$p" | fzf -e -m \
+  find "${@:-.}" -not -path "*/$EXCLUDE_DIR/*" | fzf -e -m \
     --bind 'enter:execute(nvim {+})' \
     --bind "ctrl-y:execute-silent(echo $(pwd)/{+} | xclip -se c)"
 }
 
 alias gg='fn-grep-neovim'
 fn-grep-neovim() {
-  search_string="$*"
-  grep -liR "$search_string" 2> /dev/null | fzf -e -m \
+  search_string="$@"
+  grep -liR "$search_string" --exclude-dir="$EXCLUDE_DIR" 2> /dev/null | fzf -e -m \
     --bind "enter:execute(nvim -c \"/\c$search_string\" {+})" \
     --bind "ctrl-y:execute-silent(echo $(pwd)/{+} | xclip -se c)" \
     --preview="grep -n -i -C 5 \"$search_string\" {} --color=always" \
