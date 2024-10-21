@@ -137,9 +137,9 @@ install_trans
 install_tgpt
 install_delta
 install_tmux
-install_neovim
 install_lazydocker
 install_lazygit
+install_neovim
 #install_kitty
 
 # Prevent the script from running unintentionally
