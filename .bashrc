@@ -5,13 +5,12 @@ PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\u@\H \
 PATH="$HOME/.local/bin:$PATH"
 
 # Load unversioned bash scripts
-if [ -f .ext ]; then source .ext; fi
-
-# Init zoxide
-eval "$($HOME/.local/bin/zoxide init bash)"
+if [ -f .ext ]; then source $HOME/.ext; fi
 
 # Load support files
 source $HOME/.alias
 source $HOME/.funcs
 source $HOME/.colors
 
+# Init zoxide
+eval "$($HOME/.local/bin/zoxide init bash)"
