@@ -10,6 +10,8 @@ wget https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/m
 wget https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.funcs -O ~/.funcs
 wget https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.profile -O .profile
 wget https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.tmux.conf -O .tmux.conf
+wget https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.gitconfig -O .gitconfig
+wget https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.gitignore -O .gitignore
 
 # update bash
 wget https://raw.githubusercontent.com/jimmy-loyola/flawless-devenv/refs/heads/main/.bashrc -O .bashrc
