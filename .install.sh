@@ -143,5 +143,8 @@ install_delta
 #install_kitty
 
 # Prevent the script from running unintentionally
-chmod -x ~/.install.sh
+
+if [ -f ~/.install.sh ]; then
+  chmod -x ~/.install.sh
+fi
 
