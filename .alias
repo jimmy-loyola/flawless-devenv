@@ -17,4 +17,5 @@ alias gitp='git push'
 alias xxx='xclip -selection clipboard'
 alias bins='find /usr/bin /usr/sbin | fzf -e -m --preview="man {}"'
 alias nnn='nnn -dDeHiJoQSuUx'
+alias dsa='tgpt -i'
 
