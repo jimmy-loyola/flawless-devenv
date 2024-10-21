@@ -64,8 +64,9 @@ install_neovim() {
   rm -f $bin_folder/nvim $app_folder/nvim.tar.gz
   ln -s $app_folder/nvim-linux64/bin/nvim $bin_folder/nvim
   rm -rf ~/.local/share/nvim && rm -rf ~/.config/nvim
-  cd ~ && git submodule init ~/.config/nvim && git submodule update ~/.config/nvim
-  nvim && cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim && make && cd -
+  
+  #cd ~ && git submodule init ~/.config/nvim && git submodule update ~/.config/nvim
+  #nvim && cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim && make && cd -
 }
 
 # Install tmux
