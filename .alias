@@ -1,21 +1,19 @@
-# Main aliases
+# Aliases
 alias l='ls -ah'
 alias ll='ls -lah'
-alias lll='ls -lhaL "$@" | fzf -e'
 alias cd='z'
-alias nvim="nvim -c 'highlight Visual guibg=#FF5F87 guifg=#000000'"
-alias eee='explorer.exe .'
-alias xxx='xclip -selection clipboard'
 alias asdf='source ~/.bashrc'
+alias nvim="nvim -c 'highlight Visual guibg=#FF5F87 guifg=#000000'"
 alias delta='delta -s --navigate'
-alias bins='find /usr/bin /usr/sbin | fzf -e -m --preview="man {}" | bash'
-alias ttt='tmux new-session -s front \; new-session -s back \; switch -t front'
-alias zxc='tmux choose-tree'
-alias nnn='nnn -dDeHiJoQSuUx'
+
+# Git alias
 alias gits='git status'
-alias gitl='git log -7'
+alias gitl='git log -5'
 alias gitc='git commit -va'
 alias gitp='git push'
-alias lzg='lazygit'
-alias lzd='lazydocker'
-alias qwe='tgpt -i'
+
+# Generics
+alias xxx='xclip -selection clipboard'
+alias bins='find /usr/bin /usr/sbin | fzf -e -m --preview="man {}"'
+alias nnn='nnn -dDeHiJoQSuUx'
+
