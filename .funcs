@@ -12,11 +12,11 @@ fn-find-neovim() {
 
 alias gg='fn-grep-neovim'
 fn-grep-neovim() {
-  search_string="$@"
-  grep -liR "$search_string" --exclude-dir="$EXCLUDE_DIR" 2> /dev/null | fzf -e -m \
-    --bind "enter:execute(nvim -c \"/\c$search_string\" {+})" \
+  search_str="$@"
+  grep -FliR "$search_str" --exclude-dir="$EXCLUDE_DIR" 2> /dev/null | fzf -e -m \
+    --bind "enter:execute(nvim -c \"/\c$search_str\" {+})" \
     --bind "ctrl-y:execute-silent(echo $(pwd)/{+} | xclip -se c)" \
-    --preview="grep -n -i -C 5 \"$search_string\" {} --color=always" \
+    --preview="grep -Fin -C 5 \"$search_str\" {} --color=always" \
     --preview-window="up:70%" --keep-right
 }
 
