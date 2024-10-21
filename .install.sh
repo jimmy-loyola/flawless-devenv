@@ -133,11 +133,11 @@ install_ripgrep
 #install_navi
 install_zoxide
 #install_pdftohtml
-install_neovim
-#install_tmux
-install_trans
-install_tgpt
+#install_trans
+#install_tgpt
 install_delta
+install_tmux
+install_neovim
 #install_lazydocker
 #install_lazygit
 #install_kitty
